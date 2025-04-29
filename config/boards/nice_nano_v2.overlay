@@ -4,10 +4,7 @@
 	compatible = "nordic,nrf-spim";
 	/* Cannot be used together with i2c0. */
 	status = "okay";
-	mosi-pin = <6>;
-	// Unused pins, needed for SPI definition, but not used by the ws2812 driver itself.
-	sck-pin = <5>;
-	miso-pin = <7>;
+	pins = <6 5 7>; // MOSI, SCK, MISO pins in correct format
 
 	led_strip_1: ws2812@0 {
 		compatible = "worldsemi,ws2812-spi";
